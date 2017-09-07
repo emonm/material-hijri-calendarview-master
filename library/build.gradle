@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'material-hijri-calendarview'
+
+    publishedGroupId = 'com.github.eltohamy'
+    libraryName = 'material-hijri-calendarview'
+    artifact = 'material-hijri-calendarview'
+
+    libraryDescription = 'A Material design back port of Android\'s Hijri CalendarView. The goal is to have a Material look and feel, rather than 100% parity with the platform\'s implementation.'
+
+    siteUrl = 'https://github.com/eltohamy/material-hijri-calendarview'
+    gitUrl = 'hhttps://github.com/eltohamy/material-hijri-calendarview.git'
+
+    libraryVersion = '1.1.0'
+
+    developerId = 'eltohamy'
+    developerName = 'El-Tohamy Allam'
+    developerEmail = 'tohamy_allam@yahoo.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode project.ext.versionCodeInt
+        versionName version
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.1.0'
+    compile group: 'com.github.msarhan', name: 'ummalqura-calendar', version: '1.1.7'
+    testCompile 'junit:junit:4.12'
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
